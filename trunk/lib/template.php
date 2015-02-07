@@ -1,4 +1,12 @@
 <?php
+/*****************************
+ * R-KISS
+ * Clase: template
+ * Desarrollado por MdeMoUcH
+ * mdemouch@gmail.com
+ * http://www.lagranm.com/
+ *****************************/
+	 
 class template extends config{
 	
 	function __construct($tpl_name){

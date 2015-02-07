@@ -26,7 +26,6 @@ a base de PHP, MySQL y un poquito de Shell Script...
 
 -Opción de lanzar registro de hosts desde la web.
 
--Controlar IPs locales y mostrar un alert en vez de lo de elhacker.net.
 
 -Sistema de usuarios? CFW?
 
@@ -35,6 +34,13 @@ a base de PHP, MySQL y un poquito de Shell Script...
 
 
 ###CHANGELOG - Cambios en versiones
+
+
+####v0.3.1 - 2015-02-07
+
+-Comentarios añadidos.
+
+-Se controlan IPs locales y se muestra un alert en vez de lo de elhacker.net.
 
 
 ####v0.3 - 2015-02-07
@@ -86,5 +92,5 @@ Versión Inicial (El día de la marmota)
 
 
 
-[MdeMoUcH](http://www.twitter.com/mdemouch) [La Gran M](http://www.lagranm.com) [Ubuntu Fácil](http://www.ubuntufacil.com)
+[MdeMoUcH](http://www.twitter.com/mdemouch) | [La Gran M](http://www.lagranm.com) | [Ubuntu Fácil](http://www.ubuntufacil.com)
 

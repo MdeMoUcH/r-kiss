@@ -8,10 +8,9 @@
 	
 	<link rel="stylesheet" href="{{urlbase}}css/bootstrap.min.css" media="screen" />
 	<link rel="stylesheet" href="{{urlbase}}css/style.css" media="screen" />
-	
 </head>
+
 <body>
-	
 	<header>
 	<div class="container">	
 			<h1>{{s_titulo}} <small>{{s_subtitulo}}</small></h1>

@@ -1,4 +1,11 @@
 <?php
+/*****************************
+ * R-KISS
+ * Clase: bbdd
+ * Desarrollado por MdeMoUcH
+ * mdemouch@gmail.com
+ * http://www.lagranm.com/
+ *****************************/
 
 class bbdd extends config{
     function __construct(){

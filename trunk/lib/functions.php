@@ -1,6 +1,11 @@
 <?php
-
-/*** FUNCTIONS ***/
+/*****************************
+ * R-KISS
+ * Funciones
+ * Desarrollado por MdeMoUcH
+ * mdemouch@gmail.com
+ * http://www.lagranm.com/
+ *****************************/
 
 function muere($s_msg = '', $b_objeto = true, $b_die = true){
     if($b_objeto){
@@ -27,6 +32,26 @@ function getIP(){
 }//fun
 
 
-function filtro($s_text){ //deprecated.. xD
+function ipIsLocal($s_ip){
+	$a_ip = explode('.',$s_ip);
+	
+	if($a_ip[0] == '10'){
+		return true;
+	}elseif($a_ip[0] == '172' && $a_ip[1] >= '16' && $a_ip[1] <= '31'){
+		return true;
+	}elseif($a_ip[0] == '192' && $a_ip[1] == '168'){
+		return true;
+	}elseif($a_ip[0] == '169' && $a_ip[1] == '254'){
+		return true;
+	}elseif($a_ip[0] == '127' && $a_ip[1] == '0'){//!!!-Comprobar que esto esté bien...
+		return true;
+	}else{
+		return false;
+	}
+	muere($a_ip);
+}
+
+
+function filtro($s_text){
 	return strip_tags(trim($s_text));
 }//fun

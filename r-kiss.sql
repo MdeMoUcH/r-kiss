@@ -1,3 +1,6 @@
+
+#TABLA PARA LA BASE DE DATOS DE R-KISS (db_rkiss)
+
 CREATE TABLE  `db_rkiss`.`tbl_log` (
   `id` int(9) NOT NULL AUTO_INCREMENT,
   `host` char(100) NOT NULL,
