@@ -3,6 +3,7 @@
 class config {
 	
 	public $name = 'R-KISS';
+	public $desc = 'Rustic Knowledge IP System Service';
 	
 	public $urlbase = 'http://localhost/r-kiss/';
 	public $path = '/var/www/html/r-kiss/';

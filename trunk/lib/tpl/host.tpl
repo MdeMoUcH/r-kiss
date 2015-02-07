@@ -1,5 +1,5 @@
 
-	<table border=1 width="50%">
+	<table class="table table-hover table-bordered">
 		<tr>
 			<th>IP</th>
 			<th>Mode</th>

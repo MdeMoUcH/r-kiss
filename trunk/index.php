@@ -1,9 +1,9 @@
 <?php
 
-	include('functions.php');
-	include('config.php');
-	include('template.php');
-	include('bbdd.php');
+	include('lib/functions.php');
+	include('lib/config.php');
+	include('lib/template.php');
+	include('lib/bbdd.php');
 	
 	$config = new config();
 
@@ -49,12 +49,13 @@
 		
 		if(@$_GET['get'] == 'sh'){
 			$tpl = new template('script');
-			$tpl->show();
-		}
-		
-		$bbdd = new bbdd();
-		if(@$_GET['host'] != ''){
-			/*** PANTALLA DE HOST ***/ 
+			$s_contenido = $tpl->get(array('save'=>$config->s_save));
+		}elseif(@$_GET['get'] == 'about'){
+			$tpl = new template('about');
+			$s_contenido = $tpl->get();
+		}elseif(@$_GET['host'] != ''){
+			/*** PANTALLA DE HOST ***/
+			$bbdd = new bbdd(); 
 			$bbdd->consulta('SELECT * FROM tbl_log WHERE host = "'.$_GET['host'].'" ORDER BY date DESC;');
 			$bbdd->close();
 			
@@ -67,13 +68,10 @@
 			
 			$tpl = new template('host');
 			$s_contenido = $tpl->get(array('s_rows'=>$s_rows));
-			
-			$tpl = new template('cascara');
-			$tpl->show(array('s_contenido'=>$s_contenido));
-			
 		}else{
 			/*** PANTALLA PRINCIPAL ***/
-			$bbdd->consulta('SELECT * FROM tbl_log WHERE date in (SELECT MAX(date) FROM tbl_log GROUP BY host) ORDER BY host,date DESC;');
+			$bbdd = new bbdd();
+			$bbdd->consulta('SELECT * FROM tbl_log WHERE date in (SELECT MAX(date) FROM tbl_log GROUP BY host) GROUP BY host ORDER BY host,date DESC;');
 			$bbdd->close();
 			
 			$s_rows = '';
@@ -85,14 +83,17 @@
 			
 			$tpl = new template('main');
 			$s_contenido = $tpl->get(array('s_rows'=>$s_rows));
-			
-			$tpl = new template('cascara');
-			$tpl->show(array('s_contenido'=>$s_contenido));
 		}
+		
+		$tpl = new template('cascara');
+		$tpl->show(array('s_contenido'=>$s_contenido));
 	}else{
 		header('Location: http://www.lagranm.com');
 		die();
 	}
+	
+	
+	
 	
 	
 	
