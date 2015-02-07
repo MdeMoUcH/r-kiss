@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>{{s_titulo}}</title>
+</head>
+<body>
 <center>
 	<h1>{{s_titulo}}</h1><hr/><br/><br/>
 	{{s_contenido}}
@@ -5,3 +12,6 @@
 	<br/><br/>
 	<small>&copy;2015 <a href="http://www.laranm.com/">lagranm.com</a></small>
 </center>
+</body>
+</html>
+

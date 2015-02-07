@@ -24,8 +24,8 @@
 					$b_save = true;
 				break;
 			default:
-					$bbdd->consulta('SELECT * FROM tbl_log WHERE date = (SELECT max(date) FROM tbl_log WHERE host = "yeah")');
-					if($bbdd->resultado[0]['ip'] != getIP()){
+					$bbdd->consulta('SELECT * FROM tbl_log WHERE date = (SELECT max(date) FROM tbl_log WHERE host = "'.$_GET['host'].'")');
+					if(@$bbdd->resultado[0]['ip'] != getIP()){
 						$b_save = true;
 					}
 				break;

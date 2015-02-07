@@ -1,4 +1,4 @@
-CREATE TABLE  `db_rkis`.`tbl_log` (
+CREATE TABLE  `db_rkiss`.`tbl_log` (
   `id` int(9) NOT NULL AUTO_INCREMENT,
   `host` char(100) NOT NULL,
   `ip` char(50) NOT NULL,
