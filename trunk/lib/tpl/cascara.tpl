@@ -19,7 +19,7 @@
 	
 	<nav>
 	<div class="container">
-		<h5><a href="{{urlbase}}?who={{s_who}}">Inicio</a> | <a href="{{urlbase}}?who={{s_who}}&get=sh">Script</a> | <a href="{{urlbase}}?who={{s_who}}&get=about">Información</a></h5>
+		<h5><a href="{{urlbase}}">Inicio</a> | <a href="{{urlbase}}?get=about">Información</a></h5>
 	</div>
 	</nav>
 	
@@ -37,7 +37,10 @@
 	</div>
 	</footer>
 	
-	<!--<script type="text/javascript" src="{{urlbase}}/js/bootstrap.min.js"></script>-->
+	<script type="text/javascript" src="{{urlbase}}/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="{{urlbase}}/js/sha1.js"></script>
+	<script type="text/javascript" src="{{urlbase}}/js/main.js"></script>
+	
 </body>
 </html>
 

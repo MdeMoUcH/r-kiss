@@ -1,4 +1,4 @@
-	
+	<div class="text_container">
 	<p>
 		<b>R-KISS</b> es un sistema para conocer las IPs de nuestros propios equipos con un sencillo
 		y rústico sistema. En el que instalando un pequeña aplicación PHP en un
@@ -14,7 +14,7 @@
 	<p>
 		<a target="_blank" href="https://github.com/MdeMoUcH/r-kiss">R-KISS en GitHub</a>
 	</p>
-	
+	</div>
 	
 
 

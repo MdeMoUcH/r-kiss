@@ -11,6 +11,7 @@ include('lib/functions.php');
 include('lib/config.php');
 include('lib/template.php');
 include('lib/bbdd.php');
+include('lib/session.php');
 
 $config = new config();
 
@@ -52,66 +53,77 @@ if(@$_GET['host'] != ''  && @$_GET['save'] == $config->s_save){
 	die('ok: '.date('Y-m-d H:i:s'));
 	
 	
-}elseif(@$_GET['who'] == $config->s_who){//Una mínima seguridad para empezar...
+}else{
 	
-	if(@$_GET['get'] == 'sh'){
-		$tpl = new template('script');
-		$s_contenido = $tpl->get(array('save'=>$config->s_save));
-	}elseif(@$_GET['get'] == 'about'){
+	$s_contenido = '';
+	
+	
+	$session = new session();
+	
+	if($session->login){
+		
+		if(@$_GET['get'] == 'sh'){
+			$tpl = new template('script');
+			$s_contenido = $tpl->get(array('save'=>$config->s_save));
+		}elseif(@$_GET['host'] != ''){
+			/*** PANTALLA DE HOST ***/
+			$bbdd = new bbdd(); 
+			$bbdd->consulta('SELECT * FROM tbl_log WHERE host = "'.filtro($_GET['host']).'" ORDER BY date DESC;');
+			$bbdd->close();
+			
+			$s_rows = '';
+			
+			foreach($bbdd->resultado as $element){
+				if(ipIsLocal($element['ip'])){
+					$tpl = new template('host-row-local');
+				}else{
+					$tpl = new template('host-row');
+				}
+				$s_rows .= $tpl->get($element);
+			}
+			
+			$tpl = new template('host');
+			$s_contenido = $tpl->get(array('s_rows'=>$s_rows));
+		}else{
+			/*** PANTALLA PRINCIPAL ***/
+			$bbdd = new bbdd();
+			$bbdd->consulta('SELECT * FROM tbl_log WHERE date in (SELECT MAX(date) FROM tbl_log GROUP BY host) GROUP BY host ORDER BY host,date DESC;');
+			$bbdd->close();
+			
+			$s_rows = '';
+			
+			foreach($bbdd->resultado as $element){
+				if(ipIsLocal($element['ip'])){
+					$tpl = new template('main-row-local');
+				}else{
+					$tpl = new template('main-row');
+				}
+				$s_rows .= $tpl->get($element);
+			}
+			
+			$tpl = new template('main');
+			$s_contenido = $tpl->get(array('s_rows'=>$s_rows));
+		}
+	}elseif(!isset($_GET['get'])){
+		header('Location: '.$session->urlbase.'login.php');
+		die();
+	}
+	
+	
+	if(@$_GET['get'] == 'about'){
 		$tpl = new template('about');
 		$s_contenido = $tpl->get();
-	}elseif(@$_GET['host'] != ''){
-		/*** PANTALLA DE HOST ***/
-		$bbdd = new bbdd(); 
-		$bbdd->consulta('SELECT * FROM tbl_log WHERE host = "'.filtro($_GET['host']).'" ORDER BY date DESC;');
-		$bbdd->close();
-		
-		$s_rows = '';
-		
-		foreach($bbdd->resultado as $element){
-			if(ipIsLocal($element['ip'])){
-				$tpl = new template('host-row-local');
-			}else{
-				$tpl = new template('host-row');
-			}
-			$s_rows .= $tpl->get($element);
-		}
-		
-		$tpl = new template('host');
-		$s_contenido = $tpl->get(array('s_rows'=>$s_rows));
-	}else{
-		/*** PANTALLA PRINCIPAL ***/
-		$bbdd = new bbdd();
-		$bbdd->consulta('SELECT * FROM tbl_log WHERE date in (SELECT MAX(date) FROM tbl_log GROUP BY host) GROUP BY host ORDER BY host,date DESC;');
-		$bbdd->close();
-		
-		$s_rows = '';
-		
-		foreach($bbdd->resultado as $element){
-			if(ipIsLocal($element['ip'])){
-				$tpl = new template('main-row-local');
-			}else{
-				$tpl = new template('main-row');
-			}
-			$s_rows .= $tpl->get($element);
-		}
-		
-		$tpl = new template('main');
-		$s_contenido = $tpl->get(array('s_rows'=>$s_rows));
 	}
 	
 	$tpl = new template('cascara');
 	$tpl->show(array('s_contenido'=>$s_contenido));
-}else{
-	header('Location: http://www.lagranm.com');
-	die();
 }
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+

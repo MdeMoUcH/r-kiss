@@ -17,10 +17,34 @@
 }
 
 .code_container{
-	padding:5px 25px 5px 25px;
+	padding: 5px 25px 5px 25px;
 	background-color: #f9f2f4;
     border-radius: 24px;
     color: #c7254e;
     font-size: 110%;
 }
+
+.text_container{
+	padding: 15px 25px 15px 25px;
+	background-color: #F9F9F9;
+    border-radius: 8px;
+    color: #263E48;
+}
+
+.text_container a{
+    color: #33379D;
+}
+
+.login_box{
+	margin:auto;
+	width:50%;
+	text-align:right;
+}
+
+.centrado{
+	text-align:center;
+}
+
+
+
 

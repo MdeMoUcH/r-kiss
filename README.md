@@ -16,16 +16,15 @@ a base de PHP, MySQL y un poquito de Shell Script...
 
 ###ToDo - Lista de tareas pendientes
 
--Urls amigables.
+-Comentarios en los registros de IP.
 
--Meter seguridad (usuario//contraseña en sesion).
-
--Mostrar el script con host personalizado dinámicamente.
+-Configuración de los hosts con personalización de enlaces.
 
 -Opción de borrar hosts.
 
--Opción de lanzar registro de hosts desde la web.
+-Opción de lanzar registro de hosts desde la web (crear host).
 
+-Mostrar el script con host personalizado dinámicamente.
 
 -Sistema de usuarios? CFW?
 
@@ -34,6 +33,13 @@ a base de PHP, MySQL y un poquito de Shell Script...
 
 
 ###CHANGELOG - Cambios en versiones
+
+
+####v0.4 - 2015-02-21
+
+-Añadida seguridad por sesión, acceso con los datos del config.
+
+-Añadidos iconos glyphicon para las acciones y cambios en estilos.
 
 
 ####v0.3.1 - 2015-02-07
