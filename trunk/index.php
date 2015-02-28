@@ -83,7 +83,7 @@ if(@$_GET['host'] != ''  && @$_GET['save'] == $config->s_save){
 			}
 			
 			$tpl = new template('host');
-			$s_contenido = $tpl->get(array('s_rows'=>$s_rows));
+			$s_contenido = $tpl->get(array('host'=>filtro($_GET['host']),'s_rows'=>$s_rows));
 		}else{
 			/*** PANTALLA PRINCIPAL ***/
 			$bbdd = new bbdd();

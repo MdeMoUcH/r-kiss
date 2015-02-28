@@ -48,7 +48,6 @@ function ipIsLocal($s_ip){
 	}else{
 		return false;
 	}
-	muere($a_ip);
 }
 
 

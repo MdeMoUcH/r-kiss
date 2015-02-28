@@ -9,4 +9,4 @@
 		</tr>
 		{{s_rows}}
 	</table>
-	<p><a href="{{urlbase}}?get=sh">Get Script</a> | <a href="{{urlbase}}login.php?logout=true">Salir</a></p>
+	<p><a href="{{urlbase}}?get=sh">Obtener Script</a> | <a href="{{urlbase}}login.php?logout=true">Salir de {{s_titulo}}</a></p>

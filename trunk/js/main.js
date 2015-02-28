@@ -1,4 +1,10 @@
-
+/*****************************
+ * R-KISS
+ * main.js
+ * Desarrollado por MdeMoUcH
+ * mdemouch@gmail.com
+ * http://www.lagranm.com/
+ *****************************/
 var urlbase = 'http://localhost/r-kiss/';
 
 
@@ -8,8 +14,7 @@ function sendLogin(){
 			type: "POST",
 			url: urlbase+"login.php",
 			data: {user: $("#user").val(), pass: sha1($("#pass").val())}
-		})
-		.done(function(data){
+		}).done(function(data){
 			if(data == 'ok'){
 				window.location = urlbase;
 			}else{
@@ -21,13 +26,28 @@ function sendLogin(){
 	}
 }//fun
 
-function borrar(s_host){
+
+function borrar(host){
+	if(confirm('¿Está seguro de querer borrar todos los registros de "'+host+'"?')){
+		$.ajax({
+			type: "POST",
+			url: urlbase+"ajax.php",
+			data: {action: "borrar-host", host: host}
+		}).done(function(data){
+			alert(data);
+			window.location = window.location;
+		});
+	}
+}//fun
+
+
+function borrarRegistro(id){
 	$.ajax({
 		type: "POST",
 		url: urlbase+"ajax.php",
-		data: {host: s_host}
-	})
-	.done(function(data){
+		data: {action: "borrar-registro", id: id}
+	}).done(function(data){
 		alert(data);
+		window.location = window.location;
 	});
 }//fun

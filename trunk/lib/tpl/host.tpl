@@ -1,7 +1,7 @@
 
 	<table class="table table-hover table-bordered">
 		<tr>
-			<th>IP</th>
+			<th>{{host}}</th>
 			<th>Modo</th>
 			<th>Fecha</th>
 			<th>Acciones</th>

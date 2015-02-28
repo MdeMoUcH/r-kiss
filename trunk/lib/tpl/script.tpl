@@ -1,5 +1,5 @@
 
-	<p>Cópia el siguiente código en un script en tu máquina, sustituyendo el nombre del host, y ponlo en el cron:</p>
+	<p>Copia el siguiente código en un script en tu máquina, sustituyendo el nombre del host, y ponlo en el cron:</p>
 	<div class="code_container">
 		<code>
 		<p>#!/bin/bash</p>

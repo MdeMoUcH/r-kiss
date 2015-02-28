@@ -14,25 +14,18 @@ a base de PHP, MySQL y un poquito de Shell Script...
 
 
 
-###ToDo - Lista de tareas pendientes
-
--Comentarios en los registros de IP.
-
--Configuración de los hosts con personalización de enlaces.
-
--Opción de borrar hosts.
-
--Opción de lanzar registro de hosts desde la web (crear host).
-
--Mostrar el script con host personalizado dinámicamente.
-
--Sistema de usuarios? CFW?
-
 
 
 
 
 ###CHANGELOG - Cambios en versiones
+
+
+####v0.5 - 2015-02-28
+
+-Opción de borrar registros y hosts funcionando.
+
+-Acciones para los hosts arragladas y pequeños cambios en general.
 
 
 ####v0.4 - 2015-02-21
