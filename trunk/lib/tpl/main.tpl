@@ -3,7 +3,6 @@
 		<tr>
 			<th>HOST</th>
 			<th>IP</th>
-			<th>Modo</th>
 			<th>Fecha</th>
 			<th>Acciones</th>
 		</tr>

@@ -39,6 +39,7 @@ if($session->login){
 	}elseif(@$_POST['action'] == 'add-host' && @$_POST['host'] != ''){
 		$a_data = array('host' => $_POST['host'],
 						'ip' => getIP(),
+						'user_agent' => $_SERVER['HTTP_USER_AGENT'],
 						'mode' => 'default');
 		$bbdd = new bbdd();
 		if($bbdd->insert($a_data,'tbl_log')){

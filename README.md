@@ -21,6 +21,13 @@ a base de PHP, MySQL y un poquito de Shell Script...
 ###CHANGELOG - Cambios en versiones
 
 
+####v0.7 - 2015-03-01
+
+-Ahora se guarda información del host y se muestra en las acciones.
+
+-Pequeños cambios en el interfaz.
+
+
 ####v0.6 - 2015-02-28
 
 -Formulario para añadir host desde el interfaz web.

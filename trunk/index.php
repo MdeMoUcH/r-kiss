@@ -43,6 +43,7 @@ if(@$_GET['host'] != ''  && @$_GET['save'] == $config->s_save){
 		$a_data = array();
 		$a_data['host'] = $_GET['host'];
 		$a_data['ip'] = getIP();
+		$a_data['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
 		$a_data['mode'] = $s_mode;
 		
 		$bbdd->insert($a_data,'tbl_log');

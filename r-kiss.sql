@@ -1,5 +1,8 @@
-
-#TABLA PARA LA BASE DE DATOS DE R-KISS (db_rkiss)
+# R-KISS
+# Script para la tabla.
+# Desarrollado por MdeMoUcH
+# mdemouch@gmail.com
+# http://www.lagranm.com/
 
 CREATE TABLE  `db_rkiss`.`tbl_log` (
   `id` int(9) NOT NULL AUTO_INCREMENT,
@@ -9,3 +12,5 @@ CREATE TABLE  `db_rkiss`.`tbl_log` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
+
+ALTER TABLE `db_rkiss`.`tbl_log` ADD COLUMN `user_agent` VARCHAR(255)  NOT NULL AFTER `ip`;
