@@ -51,3 +51,39 @@ function borrarRegistro(id){
 		window.location = window.location;
 	});
 }//fun
+
+
+function addHost(){
+	var host = $('#host').val();
+	if(host != ''){
+		$.ajax({
+			type: "POST",
+			url: urlbase+"ajax.php",
+			data: {action: "add-host", host: host}
+		}).done(function(data){
+			alert(data);
+			window.location = window.location;
+		});
+	}else{
+		alert('El host tiene que tener un nombre.');
+	}
+}//fun
+
+
+
+
+
+
+$('#script_host').keyup(function(){
+	$('#host').html($('#script_host').val());
+});
+
+
+
+
+
+
+
+
+
+

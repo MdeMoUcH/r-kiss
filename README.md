@@ -21,9 +21,16 @@ a base de PHP, MySQL y un poquito de Shell Script...
 ###CHANGELOG - Cambios en versiones
 
 
+####v0.6 - 2015-02-28
+
+-Formulario para añadir host desde el interfaz web.
+
+-Input para personalizar el script dinámicamente.
+
+
 ####v0.5 - 2015-02-28
 
--Opción de borrar registros y hosts funcionando.
+-Opción de borrar registros y hosts, funcionando.
 
 -Acciones para los hosts arragladas y pequeños cambios en general.
 

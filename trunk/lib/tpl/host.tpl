@@ -8,3 +8,6 @@
 		</tr>
 		{{s_rows}}
 	</table>
+    <div id="main_menu">
+		<p><a href="{{urlbase}}">Volver</a></p>
+	</div>

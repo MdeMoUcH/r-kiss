@@ -36,6 +36,19 @@ if($session->login){
 		$bbdd->close();
 		
 		die($s_result);
+	}elseif(@$_POST['action'] == 'add-host' && @$_POST['host'] != ''){
+		$a_data = array('host' => $_POST['host'],
+						'ip' => getIP(),
+						'mode' => 'default');
+		$bbdd = new bbdd();
+		if($bbdd->insert($a_data,'tbl_log')){
+			$s_result = 'Se ha registrado del host con éxito.';
+		}else{
+			$s_result = 'Hubo algún problema y no se pudo registrar el host.';
+		}
+		$bbdd->close();
+		
+		die($s_result);
 	}else{
 		Header('Location: '.$session->urlbase);
 		die();
