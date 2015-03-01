@@ -21,6 +21,12 @@ a base de PHP, MySQL y un poquito de Shell Script...
 ###CHANGELOG - Cambios en versiones
 
 
+####v0.7.1 - 2015-03-01
+
+-Cambiados los iconos glyphicon de las acciones por unos png libres,
+para reducir el tamaño de la aplicación a la mitad.
+
+
 ####v0.7 - 2015-03-01
 
 -Ahora se guarda información del host y se muestra en las acciones.

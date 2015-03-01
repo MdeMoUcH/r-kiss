@@ -57,6 +57,16 @@
 	padding-top:20px;
 }
 
+.action_pic{
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+
+.action_pic:hover{
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+}
+
 
 
 
