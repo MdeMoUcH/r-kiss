@@ -18,11 +18,11 @@ function sendLogin(){
 			if(data == 'ok'){
 				window.location = urlbase;
 			}else{
-				alert('El usuario o la contraseña no son correctos.');
+				$("#mensaje").html("El usuario o la contraseña no son correctos.");
 			}
 		});
 	}else{
-		$("#mensaje").html("Rellena ambos campos campos");
+		$("#mensaje").html("Rellena ambos campos.");
 	}
 }//fun
 
@@ -75,7 +75,20 @@ function addHost(){
 
 
 $('#script_host').keyup(function(){
-	$('#host').html($('#script_host').val());
+	if($('#script_host').val() != ""){
+		$('#host').html($('#script_host').val());
+	}else{
+		$('#host').html("&lt;nombre-del-host&gt;");
+	}
+});
+
+
+$('#script_mode').keyup(function(){
+	if($('#script_mode').val() != ""){
+		$('#mode').html("&mode=<b>"+$('#script_mode').val()+"</b>");
+	}else{
+		$('#mode').html("");
+	}
 });
 
 

@@ -1,24 +1,45 @@
 #R-KISS
 ##Rustic Knowledge IP System Service
 
-Sistema para conocer las IPs de nuestros propios equipos con un sencillo
+Sistema para conocer las IPs de nuestros equipos con un sencillo
 y rústico sistema. En el que instalando un pequeña aplicación PHP en un
 servidor, y usando un script en las máquinas que queramos (de momento
-sólo para Linux) nos irá actualizando la IP pública en un servidor.
+sólo para Linux) nos irá actualizando la IP pública en el servidor.
 
 
-Desarrollado por MdeMoUcH (mdemouch@gmail.com),
-a base de PHP, MySQL y un poquito de Shell Script...
-
-
+Desarrollado por MdeMoUcH (mdemouch@gmail.com)
 
 
 
+###Instalación de R-KISS
 
+Para instalar r-kiss necesitaremos tener instalado un servidor LAMP.
+
+Una vez con los archivos descargados, deberemos copiar el contenido
+de la carpeta trunk a la carpeta donde vaya alojarse r-kiss.
+
+También hay que ejecutar el script de base de datos(r-kiss.sql).
+
+Para finalizar habrá que modificar el archivo de configuración
+(lib/config.php) con los parámetros adecuados en cada caso (el acceso a 
+la base de datos y el usuario y contraseña que queramos usar).
 
 
 
 ###CHANGELOG - Cambios en versiones
+
+
+####v0.8 - 2015-03-08
+
+-Cambiada la información y añadida página sobre los modos.
+
+-Input para personalizar el modo en el script.
+
+-Añadidas comillas en el script para que funcione bien y un poco de privacidad en la contraseña.
+
+-Pequeños cambios en estilos y favicon añadido.
+
+-Solucionados algunos fallos y añadido algún comentario.
 
 
 ####v0.7.1 - 2015-03-01
@@ -45,7 +66,7 @@ para reducir el tamaño de la aplicación a la mitad.
 
 -Opción de borrar registros y hosts, funcionando.
 
--Acciones para los hosts arragladas y pequeños cambios en general.
+-Acciones para los hosts arregladas y pequeños cambios en general.
 
 
 ####v0.4 - 2015-02-21

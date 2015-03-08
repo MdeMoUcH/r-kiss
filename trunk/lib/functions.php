@@ -37,13 +37,13 @@ function ipIsLocal($s_ip){
 	
 	if($a_ip[0] == '10'){
 		return true;
-	}elseif($a_ip[0] == '172' && $a_ip[1] >= '16' && $a_ip[1] <= '31'){
+	}elseif($a_ip[0] == '127'){
 		return true;
 	}elseif($a_ip[0] == '192' && $a_ip[1] == '168'){
 		return true;
 	}elseif($a_ip[0] == '169' && $a_ip[1] == '254'){
 		return true;
-	}elseif($a_ip[0] == '127' && $a_ip[1] == '0'){//!!!-Comprobar que esto esté bien...
+	}elseif($a_ip[0] == '172' && $a_ip[1] >= '16' && $a_ip[1] <= '31'){
 		return true;
 	}else{
 		return false;

@@ -8,12 +8,13 @@
 	
 	<link rel="stylesheet" href="{{urlbase}}css/bootstrap.min.css" media="screen" />
 	<link rel="stylesheet" href="{{urlbase}}css/style.css" media="screen" />
+	<link rel="shortcut icon" href="{{urlbase}}img/r-kiss.png" />
 </head>
 
 <body>
 	<header>
 	<div class="container">	
-			<h1>{{s_titulo}} <small>{{s_subtitulo}}</small></h1>
+			<h1><img src="img/r-kiss.png" />{{s_titulo}} <small>{{s_subtitulo}}</small></h1>
 	</div>
 	</header>
 	
@@ -37,9 +38,9 @@
 	</div>
 	</footer>
 	
-	<script type="text/javascript" src="{{urlbase}}/js/jquery-1.11.2.min.js"></script>
-	<script type="text/javascript" src="{{urlbase}}/js/sha1.js"></script>
-	<script type="text/javascript" src="{{urlbase}}/js/main.js"></script>
+	<script type="text/javascript" src="{{urlbase}}js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="{{urlbase}}js/sha1.js"></script>
+	<script type="text/javascript" src="{{urlbase}}js/main.js"></script>
 	
 </body>
 </html>

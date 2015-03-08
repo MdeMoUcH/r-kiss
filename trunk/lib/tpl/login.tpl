@@ -1,5 +1,5 @@
-<div class="login_box text_container">
 <h2 class="centrado">Acceso</h2>
+<div class="login_box text_container">
 	<p id="mensaje" class="centrado">&nbsp;</p>
 	<form id="login" name="login" method="POST">
 		<p>Usuario: <input type="text" id="user" name="user" /></p>

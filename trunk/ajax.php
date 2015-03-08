@@ -40,7 +40,7 @@ if($session->login){
 		$a_data = array('host' => $_POST['host'],
 						'ip' => getIP(),
 						'user_agent' => $_SERVER['HTTP_USER_AGENT'],
-						'mode' => 'default');
+						'mode' => 'web');
 		$bbdd = new bbdd();
 		if($bbdd->insert($a_data,'tbl_log')){
 			$s_result = 'Se ha registrado del host con éxito.';

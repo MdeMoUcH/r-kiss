@@ -15,7 +15,7 @@ include('lib/session.php');
 
 $config = new config();
 
-if(@$_GET['host'] != ''  && @$_GET['save'] == $config->s_save){
+if(@$_GET['host'] != ''  && @$_GET['save'] == sha1(sha1($config->s_save))){
 	$s_mode = 'default';
 	if(@$_GET['mode'] != ''){
 		$s_mode = filtro($_GET['mode']);
@@ -23,21 +23,16 @@ if(@$_GET['host'] != ''  && @$_GET['save'] == $config->s_save){
 		$s_mode = 'default';
 	}
 	
-	$b_save = false;
+	$b_save = true;
 	
 	$bbdd = new bbdd();
 	
-	switch($s_mode){
-		case 'log':
-				$b_save = true;
-			break;
-		default:
-				$bbdd->consulta('SELECT * FROM tbl_log WHERE date = (SELECT max(date) FROM tbl_log WHERE host = "'.filtro($_GET['host']).'")');
-				if(@$bbdd->resultado[0]['ip'] != getIP()){
-					$b_save = true;
-				}
-			break;
-	}//switch
+	if($s_mode == 'default'){
+		$bbdd->consulta('SELECT * FROM tbl_log WHERE date = (SELECT max(date) FROM tbl_log WHERE host = "'.filtro($_GET['host']).'")');
+		if(@$bbdd->resultado[0]['ip'] == getIP()){
+			$b_save = false;
+		}
+	}
 	
 	if($b_save){
 		$a_data = array();
@@ -65,7 +60,10 @@ if(@$_GET['host'] != ''  && @$_GET['save'] == $config->s_save){
 		
 		if(@$_GET['get'] == 'sh'){
 			$tpl = new template('script');
-			$s_contenido = $tpl->get(array('save'=>$config->s_save));
+			$s_contenido = $tpl->get(array('save'=>sha1(sha1($config->s_save))));
+		}elseif(@$_GET['get'] == 'modos'){
+			$tpl = new template('modos');
+			$s_contenido = $tpl->get();
 		}elseif(@$_GET['host'] != ''){
 			/*** PANTALLA DE HOST ***/
 			$bbdd = new bbdd(); 
@@ -105,7 +103,7 @@ if(@$_GET['host'] != ''  && @$_GET['save'] == $config->s_save){
 			$tpl = new template('main');
 			$s_contenido = $tpl->get(array('s_rows'=>$s_rows));
 		}
-	}elseif(!isset($_GET['get'])){
+	}elseif($_GET['get'] != 'about'){
 		header('Location: '.$session->urlbase.'login.php');
 		die();
 	}
@@ -115,6 +113,7 @@ if(@$_GET['host'] != ''  && @$_GET['save'] == $config->s_save){
 		$tpl = new template('about');
 		$s_contenido = $tpl->get();
 	}
+	
 	
 	$tpl = new template('cascara');
 	$tpl->show(array('s_contenido'=>$s_contenido));

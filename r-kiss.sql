@@ -1,8 +1,10 @@
 # R-KISS
-# Script para la tabla.
+# Script para la base de datos.
 # Desarrollado por MdeMoUcH
 # mdemouch@gmail.com
 # http://www.lagranm.com/
+
+CREATE DATABASE db_rkiss;
 
 CREATE TABLE  `db_rkiss`.`tbl_log` (
   `id` int(9) NOT NULL AUTO_INCREMENT,

@@ -7,6 +7,19 @@
  * http://www.lagranm.com/
  *****************************/
 
+
+h1{
+	color:#920000;
+}
+
+a{
+	color:Red;
+}
+
+a:hover{
+	color:#FF6347;
+}
+
 .container{
 	margin-top: 20px;
 }
@@ -27,13 +40,8 @@
 
 .text_container{
 	padding: 15px 25px 15px 25px;
-	background-color: #F9F9F9;
+	background-color: #f9f2f4;
     border-radius: 8px;
-    color: #263E48;
-}
-
-.text_container a{
-    color: #33379D;
 }
 
 .login_box{
@@ -65,9 +73,19 @@
 .action_pic:hover{
 	opacity: 0.3;
 	filter: alpha(opacity=30);
+} 
+
+#mensaje{
+	color: Red;#23527c
 }
 
+#script_mode{
+	margin-top:10px;
+}
 
+.form-control:focus{
+	border-color: Red;
+}
 
 
 
